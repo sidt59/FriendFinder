@@ -20,16 +20,16 @@ var friendsArray = [
     "name":"Rey",
     "photo":"https://pbs.twimg.com/profile_images/1078149380853587968/l9shQDc2_400x400.jpg",
     "scores":[
-        9,
+        2,
         3,
         3,
-        9,
+        1,
         4,
-        6,
+        5,
         2,
         1,
-        8,
-        7
+        4,
+        2s
       ]
   },
 
