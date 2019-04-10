@@ -29,7 +29,7 @@ var friendsArray = [
         2,
         1,
         4,
-        2s
+        2
       ]
   },
 

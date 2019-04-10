@@ -22,20 +22,20 @@ app.post("/api/friends", function(req,res){
 
     var totalDifference = 0;
 
-    for(var i = 0; i < friends.length; i++){
-        console.log(friends[i]);
+    for(var i = 0; i < friendsData.length; i++){
+        console.log(friendsData[i]);
         totalDifference = 0;
 
-        for(var j = 0; j < friends[i].scores[j]; j++){
-            totalDifference += Math.abs(parseInt(userScores[j]) - parseInt(friends[i].scores[j]));
+        for(var j = 0; j < friendsData[i].scores[j]; j++){
+            totalDifference += Math.abs(parseInt(userScores[j]) - parseInt(friendsData[i].scores[j]));
             if(totalDifference <= bestMatch.friendDifference){
-                bestMatch.name = friends[i].name;
-                bestMatch.photo = friends[i].photo;
+                bestMatch.name = friendsData[i].name;
+                bestMatch.photo = friendsData[i].photo;
                 bestMatch.friendDifference = totalDifference;
             }
         }
     }
-    friends.push(userData);
+    friendsData.push(userData);
     res.json(bestMatch);
 });
 

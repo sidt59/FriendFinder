@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -18,15 +18,15 @@
 
     <!-- input fields -->
     <h4>Name (required)</h4>
-    <input type="text" class="form-control">
+    <input id="name" type="text" class="form-control">
     <h4>Link to photo image (required)</h4> 
-    <input type="text" class="form-control">
+    <input id="photo" type="text" class="form-control">
     <hr>
 
     <!-- questions -->
     <h3>Question 1</h3>
     <h4>Adaptogen tofu stumptown gastropub chambray irony.</h4>
-    <select class="chosen-select">
+    <select id="question1" class="chosen-select">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -36,7 +36,7 @@
 
     <h3>Question 2</h3>
     <h4>Adaptogen tofu stumptown gastropub chambray irony.</h4>
-    <select class="chosen-select">
+    <select id="question2" class="chosen-select">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -46,7 +46,7 @@
 
     <h3>Question 3</h3>
     <h4>Adaptogen tofu stumptown gastropub chambray irony.</h4>
-    <select class="chosen-select">
+    <select id="question3" class="chosen-select">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -56,7 +56,7 @@
 
     <h3>Question 4</h3>
     <h4>Adaptogen tofu stumptown gastropub chambray irony.</h4>
-    <select class="chosen-select">
+    <select id="question4" class="chosen-select">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -66,7 +66,7 @@
 
     <h3>Question 5</h3>
     <h4>Adaptogen tofu stumptown gastropub chambray irony.</h4>
-    <select class="chosen-select">
+    <select id="question5" class="chosen-select">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -76,7 +76,7 @@
 
     <h3>Question 6</h3>
     <h4>Bespoke la croix hexagon try-hard snackwave.</h4>
-    <select class="chosen-select">
+    <select id="question6" class="chosen-select">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -86,7 +86,7 @@
 
     <h3>Question 7</h3>
     <h4>Bespoke la croix hexagon try-hard snackwave.</h4>
-    <select class="chosen-select">
+    <select id="question7" class="chosen-select">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -96,7 +96,7 @@
 
     <h3>Question 8</h3>
     <h4>Bespoke la croix hexagon try-hard snackwave.</h4>
-    <select class="chosen-select">
+    <select id="question8" class="chosen-select">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -106,7 +106,7 @@
 
     <h3>Question 9</h3>
     <h4>Bespoke la croix hexagon try-hard snackwave.</h4>
-    <select class="chosen-select">
+    <select id="question9" class="chosen-select">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -116,7 +116,7 @@
 
     <h3>Question 10</h3>
     <h4>Bespoke la croix hexagon try-hard snackwave.</h4>
-    <select class="chosen-select">
+    <select id="question10" class="chosen-select">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -124,9 +124,66 @@
         <option value="5">5</option>
     </select>
     <br><br>
-    <button class="btn btn-primary" type="submit">Submit</button>
+    <button id="submit" class="btn btn-primary" type="submit">Submit</button>
+
+    <!-- pop up for...popping......up -->
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h2 class="modal-title"><strong>Best Match</strong></h2>
+        </div>
+        <div class="modal-body">
+            <h2 id="match-name"></h2>
+            <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+    </div>
 
     <!-- container closing tag. delete at your own peril -->
    </div>
+
+   <!-- javascript starts here -->
+   <script type="text/javascript">
+	$("#submit").on("click", function(event) {
+		event.preventDefault();
+		// Form validation
+		var valid = true;
+		if($("#name").val() === "" || $("#photo").val() === "") {
+			valid = false;
+		} else if($("#question1").val() === "empty" || $("#question2").val() === "empty" || $("#question3").val() === "empty" || $("#question4").val() === "empty" || $("#question5").val() === "empty" || $("#question6").val() === "empty" || $("#question7").val() === "empty" || $("#question8").val() === "empty" || $("#question9").val() === "empty" || $("#question10").val() === "empty") {
+			valid = false;
+		}
+		if(valid === true) {
+			var newUser = {
+				name: $("#name").val().trim(),
+				photo: $("#photo").val().trim(),
+				scores: [
+					$("#question1").val(),
+					$("#question2").val(),
+					$("#question3").val(),
+					$("#question4").val(),
+					$("#question5").val(),
+					$("#question6").val(),
+					$("#question7").val(),
+					$("#question8").val(),
+					$("#question9").val(),
+					$("#question10").val()
+				]
+			};
+			var currentURL = window.location.origin;
+			// Ajax call for receiving response after POST req
+			$.post(currentURL + "/api/friends", newUser, function(data) {
+				$("#bestFriend").text(data.name);
+				$("#bestFriendPhoto").attr("src", data.photo);
+				$("#bestFriendModal").modal("toggle");
+			});
+		} else {
+			// If a required field is missing, show alert
+			alert("Survey is incomplete!");
+		}
+	});
+</script>
 </body>
 </html>
